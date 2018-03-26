@@ -1,0 +1,50 @@
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>HYHBlog</title>
+	<!--<link href="/static/css/blog.css" rel="stylesheet" type="text/css">-->
+</head>
+<body>
+	<div class="container">
+		<div class="header">
+			<div id="top">
+				<a href="/blog/"><img src="/static/images/logo.jpg" alt="LOGO" width="180" height="120" id="logo"></a>
+				<div id="nav_dir">
+					<ul id="top_nav">
+						<li><a href="/" class="a_normal">首页</a></li>
+						<li><a href="#" class="a_normal">订阅</a></li>
+						<li><a href="#" class="a_normal">关于</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!-- end .header -->
+		<div class="content_body">
+			<div class="main_body">
+				{% for blog in blogs %}
+					<div class="blog_body">
+						<div class="blog_title"><a href="/detail/?id={{ blog.id }}">{{ blog.title }}</a></div>
+						<div class="blog_info1">
+							<span>
+								<span class="li_small_1">分类：<a href="#">{{ blog.classification }}</a></span>
+								<span class="li_small_1">发表时间：{{ blog.publish_time|date:"Y-m-d H:i" }}</span>
+							</span>
+						</div>
+						<div class="blog_splitline"></div>
+						<div class="blog_description">{{ blog_content }}</div>
+						<div class="blog_info2">
+							<span class="blog_info2_list">
+								<span class="li_small_2">标签：{% for tag in blog.tags.all %}<a href="#">{{ tag.tag_name }}</a>{% endfor %}
+							</span>
+						</div>
+					</div>
+				{% endfor %}
+			</div>
+		</div>
+
+		<div class="footer">
+			<div id="footer_logo"></div>
+		</div>
+	</div>
+</body>
+</html>
