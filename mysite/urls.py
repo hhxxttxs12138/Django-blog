@@ -18,7 +18,8 @@ from django.urls import path,include
 from blog import views as blog_views
 
 urlpatterns = [
-	path('detail/', blog_views.blog_detail, name='article_content'),
+    path('classification/', blog_views.blog_classification, name='classification'),
+    path('detail/', blog_views.blog_detail, name='article_content'),
     path('admin/', admin.site.urls),
     path('comments/', include('django_comments.urls')),
     path('', blog_views.blog_list, name='blog_list'),

@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block title %}{{ classification }}{% endblock %}
+{% block extracss %}<link rel="Stylesheet" type="text/css" href="../static/css/StyleSheet.css"/>{%endblock%}
+
+{% block content_body %}
+	<div class="classification_content">
+		{% for blog in blog_list %}
+		<div class="classification_info">{{ blog.title }}</div>
+		{% endfor %}
+	</div>
+{% endblock %}
