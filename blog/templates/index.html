@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% block title %}HYHBlog{% endblock %}
-{% block extracss %}<link rel="Stylesheet" type="text/css" href="static/css/StyleSheet.css"/>{%endblock%}
+{% block extracss %}<link rel="Stylesheet" type="text/css" href="static/css/index.css"/>{%endblock%}
 <!-- end .header -->
 
 {% block content_body %}
@@ -24,7 +24,7 @@
 				<div class="blog_description">{{ blog_content }}</div>
 				<div class="blog_info2">
 					<span class="blog_info2_list">
-						<span class="li_small_2">标签：{% for tag in blog.tags.all %}<a href="#">{{ tag.tag_name }}</a>{% endfor %}
+						<span class="li_small_2">标签：{% for tag in blog.tags.all %}<a href="#">{{ tag.tag_name }}</a>{% endfor %}</span>
 					</span>
 				</div>
 			</div>

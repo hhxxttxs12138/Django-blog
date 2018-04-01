@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block title %} {{ blog.title }} - HYHBlog {% endblock %}
-{% block extracss %}<link rel="Stylesheet" type="text/css" href="../static/css/StyleSheet.css"/>{%endblock%}
+{% block extracss %}<link rel="Stylesheet" type="text/css" href="../static/css/detail.css"/>{%endblock%}
 {% load comments %}
 
 {% block content_body %}
@@ -10,13 +10,13 @@
 			<div class="blog_title">{{ blog.title }}</div>
 			<div class="blog_info1">
 				<span class="blog_info1_list">
-					<span class="blog_info1_list">分类：<a href="#">{{ blog.Classification }}</a></span>
+					<span class="blog_info1_list">分类：<a href="/classification/?c={{ blog.Classification }}">{{ blog.Classification }}</a></span>
 					<span class="blog_info1_list">作者：<a href="#">{{ blog.author }}</a></span>
-					<span class="blog_info1_list">发表时间：<a href="#">{{ blog.publish_time|date:"Y-m-d H:i" }}</a></span>
+					<span class="blog_info1_list">发表时间：{{ blog.publish_time|date:"Y-m-d H:i" }}</span>
 				</span>
 			</div>
 			<div class="blog_splitline"></div>
-			<div class="blog_description">{{ blog.content }}</div>
+			<div class="blog_description"><pre>{{ blog.content }}</pre></div>
 		</div>
 
 		<div class="comments">
